@@ -11,6 +11,7 @@ body {
   color:rgb(52, 144, 231);
   font-size: 28px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
 .contenedor{
@@ -22,7 +23,7 @@ div{
   background-color: rgb(237, 239, 240);
   border: 1px solid #000000;
   padding: 12px;
-  width: 60%;
+  width: 85%;
   margin: 0 auto;
 }
 
