@@ -1,0 +1,41 @@
+<div class="form-body">
+        <form action="/form-contacto" method="post">
+          <h2>FORMULARIO DE CONTACTO</h2>
+          <div class="input-group">
+           <label for="nombre">Nombre:</label><br>
+           <input type="text" id="name" name="name" required><br>
+
+           <label for="email">Correo electrónico:</label><br>
+           <input type="email" id="email" name="email"><br>
+
+           <label for="mensaje">Comentario:</label><br>
+           <textarea 
+           id="mensaje" 
+           name="mensaje" 
+           rows="4" 
+           cols="50"
+           required>
+           </textarea><br>
+
+           <input type="submit" value="Enviar">
+          </div>
+        </form>  
+</div>
+
+<script>
+  document.getElementById('submit-btn').addEventListener('click', async () => {
+    const form = document.getElementById('contacto-form');
+    const formData = new FormData(form);
+  
+    const response = await fetch('/form-contacto', {
+      method: 'POST',
+      body: formData,
+    });
+  
+    if (response.ok) {
+      console.log('Formulario enviado con éxito');
+    } else {
+      console.error('Error al enviar el formulario');
+    }
+  });
+  </script>

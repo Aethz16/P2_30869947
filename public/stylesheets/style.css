@@ -45,3 +45,62 @@ legend {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+form{
+ padding: 50px 55px;
+ box-shadow: 0 0 28px rgb(0, 0, 0, 0.2);
+ border-radius: 30px;
+ text-align: center;
+ width: 929px;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:rgb(52, 144, 231);;
+}
+
+label {
+  color: #083652;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+input, textarea{
+padding: 17px 25px;
+border-radius: 25px;
+margin-bottom: 20px;
+background-color: rgb(176, 198, 218);
+border: 2px solid rgb(176, 198, 218);
+color: #083652;
+outline: none; 
+}
+
+.form-body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width:600px){
+
+  body{
+    padding: 30px;
+  }
+
+  form{
+    padding: 50px 30px;
+    width: 100%;
+  }
+
+  input{
+    padding: 15px;
+  }
+}
