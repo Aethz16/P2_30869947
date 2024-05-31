@@ -19,20 +19,19 @@ class ContactosController {
     // Guardar los datos del formulario
     const ip = req.ip;
     const fecha = new Date().toISOString();
-
-   
+    
     await this.contactosModel.crearContacto(email, name, mensaje, ip, fecha);
 
     const contactos = await this.contactosModel.obtenerAllContactos();
 
     console.log(contactos);
-
+    
     try {
       res.status(200).send("Tus datos han sido enviados correctamente.");
     } catch (error) {
       res.status(500).send("Ha ocurrido un error al procesar tus datos.");
     }
- }
+  }
 }
 
 module.exports = ContactosController;

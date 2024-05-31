@@ -4,6 +4,17 @@
     <title>Curriculum Vitae</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1CCMJ7CJ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R1CCMJ7CJ5');
+</script>
+
 </head>
 <body>
   <div class="contenedor-bloque">
@@ -19,5 +30,9 @@
       <section>
         <%- include('./componentes/contacto.ejs') %>
       </section>
+  
+      <script src="/public/javascripts/ReCaptcha.js"></script>
+    
  </body>
+
 </html>
