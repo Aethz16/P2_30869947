@@ -1,5 +1,5 @@
 <div class="form-body">
-        <form action="/form-contacto" method="post">
+        <form action="/form-contacto" method="post" onsubmit="return submitUserForm();">
           <h2>FORMULARIO DE CONTACTO</h2>
           <div class="input-group">
            <label for="nombre">Nombre:</label><br>
@@ -16,11 +16,28 @@
            cols="50"
            required>
            </textarea><br>
-           <div class="g-recaptcha" data-sitekey="6LdguO0pAAAAANZfIyKYnk2L5akLF47yKm6FqMWR"></div>
-           <input type="submit" value="Enviar" id="enviar">
+           <div class="g-recaptcha" data-sitekey="6LdguO0pAAAAANZfIyKYnk2L5akLF47yKm6FqMWR" data-callback="verifyCaptcha"></div>
+           <div id="g-recaptcha-error"></div>
+           <input type="submit" name="enviar" value="submit" />
           </div>
         </form>  
 </div>
+
+<script>
+  var recaptcha_response = '';
+  function submitUserForm() {
+      if(recaptcha_response.length == 0) {
+          document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+          return false;
+      }
+      return true;
+  }
+  
+  function verifyCaptcha(token) {
+      recaptcha_response = token;
+      document.getElementById('g-recaptcha-error').innerHTML = '';
+  }
+  </script>
 
 <script>
   document.getElementById('submit-btn').addEventListener('click', async () => {
