@@ -45,7 +45,7 @@ class ContactosController {
     
     const sendTemplate = {
       from:process.env.EMAIL, 
-      to: process.env.EMAILRECP2,
+      to: [process.env.EMAILRECP2, process.env.EMAILRECP1],
       subject: "probando el envio del correo",
       text:  `Nombre: ${req.body.name} | Comentario: ${req.body.mensaje}
       } | Email: ${req.body.email} | Date: ${new Date()}`
