@@ -50,6 +50,7 @@ class ContactosController {
       text:  `Nombre: ${req.body.name} | Comentario: ${req.body.mensaje}
       } | Email: ${req.body.email} | Date: ${new Date()}`
     };
+    
 
     transporter.sendMail(sendTemplate, (error, info) => {
       if (error) {
@@ -65,12 +66,13 @@ class ContactosController {
       res.status(400).send("Faltan campos requeridos");
       return;
     }
+    
 
     // Guardar los datos del formulario
     const ip = await this.obtenerIp();
     const fecha = new Date().toISOString();
     const pais = await this.obtenerPais(ip);
-    
+  
     await this.contactosModel.crearContacto(email, name, mensaje, ip, fecha, pais);
 
     const contactos = await this.contactosModel.obtenerAllContactos();

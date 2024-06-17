@@ -17,6 +17,7 @@
 
 </head>
 <body>
+
   <div class="contenedor-bloque">
     <img src="https://i.pinimg.com/originals/5c/e0/5f/5ce05f3291528adb1dbd7efd1b1bbffe.jpg" style="width: 200px;">
     <h1>José A. Sánchez M.</h1>
@@ -30,6 +31,37 @@
       <section>
         <%- include('./componentes/contacto.ejs') %>
       </section>
+
+
+<div class="tabletest">
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mensaje</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">IP</th>
+        <th scope="col">Pais</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% results.forEach((users)=> { %>
+          <tr>
+            <td><%= user.nombre %></td>
+            <td><%= user.email %></td>
+            <td><%= user.mensaje %></td>
+            <td><%= user.fecha %></td>
+            <td><%= user.ip %></td>
+            <td><%= user.pais %></td>
+          </tr>
+        <% }) %>
+    </tbody>
+
+    </tbody>
+  </table>
+    </div>
+
 
  </body>
 

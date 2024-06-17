@@ -36,6 +36,8 @@ class ContactosModel {
     });
   }
 
+
+  
   async obtenerContacto(email) {
     const sql = `SELECT * FROM contactos WHERE email = ?`;
     const get = promisify(this.db.get).bind(this.db);
@@ -47,6 +49,7 @@ class ContactosModel {
     const all = promisify(this.db.all).bind(this.db);
     return await all(sql);
   }
+  
 }
 
 module.exports = ContactosModel;

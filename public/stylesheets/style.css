@@ -71,6 +71,11 @@ label {
   margin-bottom: 15px;
 }
 
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
 input, textarea{
 padding: 17px 25px;
 border-radius: 25px;
@@ -88,6 +93,22 @@ outline: none;
   justify-content: center;
 }
 
+
+.tabletest{
+  min-height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(52, 144, 231);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 @media(max-width:600px){
 
   body{
@@ -101,5 +122,16 @@ outline: none;
 
   input{
     padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  table {
+    width: 100%; /* El ancho de la tabla ocupa todo el ancho de la pantalla */
+  }
+
+  th, td {
+    display: block; /* Muestra cada celda en una línea separada */
+    text-align: left; /* Alinea el texto a la izquierda */
   }
 }
