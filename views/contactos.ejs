@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contactos</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+<div>
+<h1> Tabla de Contactos</h1>
+</div>
+<div class="tabletest">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Mensaje</th>
+        <th scope="col">Ip</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Id</th>
+        <th scope="col">Pais</th>
+      </tr>
+    </thead>  
+    <tbody>
+      <% data.forEach(function(row) {%>
+        <tr>
+          <td><%=row.email %></td>
+          <td><%=row.nombre %></td>
+          <td><%=row.mensaje %></td>
+          <td><%=row.ip %></td>
+          <td><%=row.fecha %></td>
+          <td><%=row.id %></td>
+          <td><%=row.pais %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+    </table>
+  </div>
+
+  </body>
+  </html>
