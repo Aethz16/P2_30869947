@@ -23,6 +23,34 @@
         </form>  
 </div>
 
+<div class="tabletest">
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mensaje</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">IP</th>
+        <th scope="col">Pais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(row) { %>
+        <tr>
+          <td><%= row.nombre %></td>
+          <td><%= row.email %></td>
+          <td><%= row.Mensaje %></td>
+          <td><%= row.Fecha %></td>
+          <td><%= row.IP %></td>
+          <td><%= row.pais %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+ </div>
+
+
 <script>
   var recaptcha_response = '';
   function submitUserForm() {

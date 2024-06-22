@@ -93,9 +93,25 @@ outline: none;
   justify-content: center;
 }
 
+.form-login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title{
+text-align: center;
+}
 
 .tabletest{
   min-height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logincenter{
+  min-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,6 +124,8 @@ table {
   border: 3px solid rgb(52, 144, 231);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
 
 @media(max-width:600px){
 
