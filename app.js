@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(session({
-  secret: process.env.SECRET, // Cambia esto por una clave secreta
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -76,12 +76,9 @@ passport.use(new GoogleStrategy({
   clientSecret: process.env.CLIENT_SECRET,
   callbackURL: "https://p2-30869947.onrender.com/auth/google/callback"
 },
-function(accessToken, refreshToken, profile, cb) {
-  User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
+function(accessToken, refreshToken, profile, done) {
+  return done(null, profile);
+}));
 
 passport.serializeUser((user, done) => {
   done(null, user);
